@@ -1,3 +1,3 @@
 == README
 
-A Web Application that will encourage users to volunteer in order to earn rewards for them and their friends!
+A Web Application that will encourage users to volunteer in order to earn rewards for them and their friends! Built with Rails on the back end and React.js on the front end. 
