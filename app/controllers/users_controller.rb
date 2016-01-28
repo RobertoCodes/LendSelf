@@ -1,17 +1,12 @@
 class UsersController < ApplicationController
 
   def new
-
+    render :new
   end
 
 
   def create
-    email_address = user_params[:username].downcase
-    if email_address["@geemailer.com"].nil?
-      email_address += "@geemailer.com"
-    end
-    attrs = {name: user_params[:name], username: email_address, password: user_params[:password]}
-    @user = User.new(attrs)
+    @user = User.new(user_params)
     if @user.save
       sign_in(@user)
       redirect_to root_url
@@ -24,7 +19,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :username, :password)
+    params.require(:user).permit(:username, :password)
   end
 
 end
