@@ -1,0 +1,15 @@
+<h1>Please Sign Up</h1>
+
+<form action="<%= users_url %>" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"></input>
+  <input type="text" value="" name="user[username]" placeholder="Username"></input><br>
+  <input type="password" value="" name="user[password]" placeholder="Password"></input><br>
+  <h3 class="errors"><%= render partial: "layouts/errors"%><h3>
+  <p>
+  </p>
+  <button type="submit" value="Sign In">Sign Up</button>
+</form>
+<p>
+</p>
+
+<%=link_to "Sign In", new_session_url %>
